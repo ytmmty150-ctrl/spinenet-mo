@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spinenet-mo"
+version = "0.1.0"
+description = "Reference implementation of a multi-objective NAS framework (NSGA-III) for osteoporosis risk stratification from DEXA spine images"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy", "scipy", "pandas", "scikit-learn", "matplotlib", "pillow", "pyyaml", "torch", "torchvision",
+]
+
+[project.scripts]
+spinenet-mo = "spinenet_mo.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spinenet_mo*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
